@@ -786,6 +786,49 @@ h1, h2, h3,
         font-size: 1rem !important;
     }
 }
+        /* FINAL TYPOGRAPHY IMPROVEMENTS */
+
+.about-copy p,
+.hero-description,
+.section-description,
+.skill-card p,
+.project-card > p,
+.timeline-item p,
+.credential-card p,
+.contact-panel p,
+.focus-item p,
+.project-note {
+    color: #f0f4fc !important;
+    font-size: 1.08rem !important;
+    font-weight: 500 !important;
+    line-height: 1.85 !important;
+    letter-spacing: 0.1px;
+}
+
+/* Improve the readability of skill and project descriptions */
+.skill-card p,
+.project-card > p,
+.credential-card p,
+.focus-item p {
+    color: #e9effa !important;
+}
+
+/* Make paragraph spacing more balanced */
+.about-copy p {
+    margin-bottom: 20px !important;
+}
+
+/* Keep text comfortable to read on smaller screens */
+@media (max-width: 650px) {
+    .about-copy p,
+    .hero-description,
+    .section-description,
+    .skill-card p,
+    .project-card > p {
+        font-size: 1rem !important;
+        line-height: 1.8 !important;
+    }
+}
     </style>
 </head>
 
