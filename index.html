@@ -708,6 +708,84 @@
         padding-bottom: 60px;
     }
 }
+        /* HIGH CONTRAST & READABILITY FIX */
+
+:root {
+    --text: #ffffff;
+    --muted: #e0e7f2;
+    --blue: #83baff;
+    --cyan: #78f0f0;
+}
+
+/* Main paragraphs */
+.about-copy p,
+.hero-description,
+.section-description,
+.skill-card p,
+.project-card > p,
+.timeline-item p,
+.credential-card p,
+.contact-panel p,
+.focus-item p {
+    color: #e0e7f2 !important;
+    font-size: 1.02rem !important;
+    line-height: 1.85 !important;
+    font-weight: 400;
+}
+
+/* All headings */
+h1, h2, h3,
+.skill-card h3,
+.project-card h3,
+.credential-card h3,
+.focus-card h3 {
+    color: #ffffff;
+}
+
+/* Navigation */
+.nav-links a {
+    color: #dce6f5 !important;
+    font-size: 0.9rem;
+}
+
+/* Secondary labels */
+.section-label,
+.project-number,
+.timeline-date,
+.credential-type {
+    color: #78f0f0 !important;
+}
+
+/* Skill tags */
+.tag {
+    color: #dceaff !important;
+    border-color: #405675;
+}
+
+/* Cards: slightly clearer background */
+.skill-card,
+.project-card,
+.credential-card,
+.focus-card {
+    background-color: #111b2e;
+    border-color: #35445e;
+}
+
+/* Contact and project links */
+.project-link {
+    color: #78f0f0 !important;
+}
+
+/* Keep readability on mobile */
+@media (max-width: 650px) {
+    .about-copy p,
+    .hero-description,
+    .section-description,
+    .project-card > p,
+    .skill-card p {
+        font-size: 1rem !important;
+    }
+}
     </style>
 </head>
 
