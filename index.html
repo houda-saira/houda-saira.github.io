@@ -1,19 +1,32 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Cloud, DevOps and Cybersecurity Engineer Portfolio">
-    <title>Houda Saira | Cloud & DevOps Engineer</title>
+
+    <meta name="description"
+          content="Houda Saira — Cloud Engineer, DevSecOps and Cloud Security.">
+    <meta name="theme-color" content="#080d1b">
+
+    <title>Houda Saira | Cloud & Security Engineer</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+          rel="stylesheet">
 
     <style>
         :root {
-            --bg: #0b1120;
-            --card: #111b2e;
-            --text: #e5edf8;
-            --muted: #9aabc3;
-            --accent: #58a6ff;
-            --border: #263750;
+            --bg: #080d1b;
+            --surface: #10182a;
+            --surface-light: #151f35;
+            --text: #f2f5ff;
+            --muted: #9ba9c3;
+            --blue: #69a7ff;
+            --cyan: #6ce5e8;
+            --border: rgba(157, 183, 226, 0.15);
+            --gradient: linear-gradient(120deg, #69a7ff, #6ce5e8);
         }
 
         * {
@@ -24,511 +37,59 @@
 
         html {
             scroll-behavior: smooth;
-            scroll-padding-top: 85px;
+            scroll-padding-top: 90px;
         }
 
         body {
-            font-family: Arial, Helvetica, sans-serif;
+            font-family: "DM Sans", sans-serif;
             background: var(--bg);
             color: var(--text);
             line-height: 1.7;
+            overflow-x: hidden;
         }
 
         a {
-            color: inherit;
             text-decoration: none;
+            color: inherit;
         }
 
-        nav {
-            position: sticky;
-            top: 0;
-            z-index: 10;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 18px 8%;
-            background: rgba(11, 17, 32, 0.96);
-            border-bottom: 1px solid var(--border);
+        a:focus-visible,
+        button:focus-visible {
+            outline: 2px solid var(--cyan);
+            outline-offset: 4px;
         }
 
-        .logo {
-            font-size: 1.25rem;
-            font-weight: bold;
+        .container {
+            width: min(1120px, 88%);
+            margin: auto;
         }
 
-        .logo span,
-        .accent {
-            color: var(--accent);
+        .gradient-text {
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
         }
 
-        .nav-links {
-            display: flex;
-            gap: 24px;
-            list-style: none;
-            font-size: 0.9rem;
+        .section {
+            padding: 100px 0;
         }
 
-        .nav-links a:hover {
-            color: var(--accent);
-        }
-
-        section {
-            padding: 85px 8%;
-        }
-
-        .hero {
-            min-height: 85vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: flex-start;
-            background:
-                radial-gradient(ellipse at 85% 20%,
-                rgba(56, 139, 253, 0.14), transparent 45%);
-        }
-
-        .eyebrow {
-            color: var(--accent);
-            letter-spacing: 2px;
-            font-size: 0.85rem;
+        .section-label {
+            color: var(--cyan);
+            font-size: 0.78rem;
             text-transform: uppercase;
-            margin-bottom: 18px;
-        }
-
-        h1 {
-            font-size: clamp(2.6rem, 7vw, 5rem);
-            line-height: 1.12;
-            margin-bottom: 20px;
-        }
-
-        h2 {
-            font-size: 2rem;
-            margin-bottom: 14px;
-        }
-
-        .hero p,
-        .section-intro {
-            color: var(--muted);
-            max-width: 680px;
-        }
-
-        .hero p {
-            font-size: 1.1rem;
-        }
-
-        .buttons {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 14px;
-            margin-top: 30px;
-        }
-
-        .button {
-            display: inline-block;
-            padding: 11px 20px;
-            border: 1px solid var(--accent);
-            border-radius: 7px;
-            transition: 0.2s;
-        }
-
-        .button.primary {
-            background: var(--accent);
-            color: #08111f;
-            font-weight: bold;
-        }
-
-        .button:hover {
-            transform: translateY(-3px);
-            opacity: 0.88;
-        }
-
-        .section-intro {
-            margin-bottom: 35px;
-        }
-
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(3, minmax(0, 1fr));
-            gap: 20px;
-            margin-top: 30px;
-        }
-
-        .card {
-            background: var(--card);
-            border: 1px solid var(--border);
-            border-radius: 12px;
-            padding: 24px;
-            transition: transform 0.2s, border-color 0.2s;
-        }
-
-        .card:hover {
-            transform: translateY(-5px);
-            border-color: var(--accent);
-        }
-
-        .card h3 {
+            letter-spacing: 3px;
+            font-weight: 700;
             margin-bottom: 12px;
         }
 
-        .card p,
-        .card li {
-            color: var(--muted);
-            font-size: 0.95rem;
+        .section-title {
+            font-family: "Space Grotesk", sans-serif;
+            font-size: clamp(2rem, 4vw, 3rem);
+            line-height: 1.2;
+            margin-bottom: 18px;
         }
 
-        .card ul {
-            padding-left: 20px;
-        }
-
-        .tag {
-            display: inline-block;
-            margin: 12px 5px 0 0;
-            padding: 4px 9px;
-            font-size: 0.78rem;
-            color: var(--accent);
-            border: 1px solid var(--border);
-            border-radius: 5px;
-        }
-
-        .project-link {
-            display: inline-block;
-            margin-top: 18px;
-            color: var(--accent);
-        }
-
-        .contact-box {
-            background: var(--card);
-            border: 1px solid var(--border);
-            border-radius: 12px;
-            padding: 35px;
-        }
-
-        .contact-box p {
-            color: var(--muted);
-            margin: 12px 0;
-        }
-
-        footer {
-            text-align: center;
-            padding: 25px;
-            border-top: 1px solid var(--border);
-            color: var(--muted);
-            font-size: 0.85rem;
-        }
-
-        @media (max-width: 850px) {
-            .grid {
-                grid-template-columns: repeat(2, minmax(0, 1fr));
-            }
-
-            nav {
-                padding: 16px 5%;
-            }
-
-            section {
-                padding: 65px 6%;
-            }
-        }
-
-        @media (max-width: 600px) {
-            nav {
-                align-items: flex-start;
-                flex-direction: column;
-                gap: 12px;
-            }
-
-            .nav-links {
-                gap: 14px;
-                flex-wrap: wrap;
-                font-size: 0.8rem;
-            }
-
-            .grid {
-                grid-template-columns: 1fr;
-            }
-
-            .hero {
-                min-height: 70vh;
-            }
-        }
-    </style>
-</head>
-
-<body>
-
-    <nav>
-        <a href="#home" class="logo">Houda<span>.</span></a>
-
-        <ul class="nav-links">
-            <li><a href="#about">About</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#certifications">Certifications</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </nav>
-
-    <main>
-        <section class="hero" id="home">
-            <div class="eyebrow">Cloud · DevOps · Cybersecurity</div>
-
-            <h1>Hi, I'm <span class="accent">Houda Saira.</span></h1>
-
-            <h2>Building secure and automated cloud infrastructures.</h2>
-
-            <p>
-                Cloud & DevOps Engineer passionate about cloud architecture,
-                infrastructure automation and cybersecurity. I design,
-                deploy and secure modern infrastructure solutions.
-            </p>
-
-            <div class="buttons">
-                <a href="#projects" class="button primary">Explore My Projects</a>
-                <a href="#contact" class="button">Get in Touch</a>
-            </div>
-        </section>
-
-        <section id="about">
-            <h2>About Me</h2>
-
-            <p class="section-intro">
-                I am a Cloud & DevOps Engineer with experience in cloud
-                infrastructure, virtualization, automation and security.
-                My goal is to build reliable, scalable and secure systems
-                while continuously improving my technical expertise.
-            </p>
-
-            <div class="grid">
-                <article class="card">
-                    <h3>☁️ Cloud Infrastructure</h3>
-                    <p>
-                        Designing cloud environments, managing resources
-                        and implementing infrastructure best practices.
-                    </p>
-                </article>
-
-                <article class="card">
-                    <h3>⚙️ Automation</h3>
-                    <p>
-                        Automating infrastructure deployment and
-                        configuration using Infrastructure as Code
-                        and CI/CD practices.
-                    </p>
-                </article>
-
-                <article class="card">
-                    <h3>🔐 Security</h3>
-                    <p>
-                        Applying access controls, network segmentation
-                        and vulnerability management practices.
-                    </p>
-                </article>
-            </div>
-        </section>
-
-        <section id="skills">
-            <h2>Technical Skills</h2>
-
-            <p class="section-intro">
-                Technologies and tools I use to build, automate and secure
-                infrastructure.
-            </p>
-
-            <div class="grid">
-                <article class="card">
-                    <h3>Cloud Platforms</h3>
-                    <span class="tag">AWS</span>
-                    <span class="tag">Microsoft Azure</span>
-                    <span class="tag">Landing Zones</span>
-                    <span class="tag">IAM</span>
-                    <span class="tag">VPC / VNet</span>
-                </article>
-
-                <article class="card">
-                    <h3>Infrastructure as Code</h3>
-                    <span class="tag">Terraform</span>
-                    <span class="tag">Bicep</span>
-                    <span class="tag">ARM Templates</span>
-                    <span class="tag">Ansible</span>
-                </article>
-
-                <article class="card">
-                    <h3>DevOps & Containers</h3>
-                    <span class="tag">GitLab CI/CD</span>
-                    <span class="tag">Jenkins</span>
-                    <span class="tag">Docker</span>
-                    <span class="tag">Kubernetes</span>
-                    <span class="tag">Git</span>
-                </article>
-
-                <article class="card">
-                    <h3>Cybersecurity</h3>
-                    <span class="tag">IAM</span>
-                    <span class="tag">Rapid7</span>
-                    <span class="tag">Vulnerability Management</span>
-                    <span class="tag">Network Security</span>
-                </article>
-
-                <article class="card">
-                    <h3>Monitoring</h3>
-                    <span class="tag">CloudWatch</span>
-                    <span class="tag">Azure Monitor</span>
-                    <span class="tag">Zabbix</span>
-                    <span class="tag">Logstash</span>
-                </article>
-
-                <article class="card">
-                    <h3>Scripting</h3>
-                    <span class="tag">Python</span>
-                    <span class="tag">Bash</span>
-                    <span class="tag">PowerShell</span>
-                    <span class="tag">JavaScript</span>
-                </article>
-            </div>
-        </section>
-
-        <section id="projects">
-            <h2>Featured Projects</h2>
-
-            <p class="section-intro">
-                A selection of hands-on projects demonstrating my
-                interests in cloud architecture, automation and security.
-            </p>
-
-            <div class="grid">
-                <article class="card">
-                    <h3>01. Serverless Event Notification System</h3>
-
-                    <p>
-                        An event announcement application using AWS serverless
-                        services to receive requests, process subscriptions
-                        and support event notifications.
-                    </p>
-
-                    <span class="tag">AWS Lambda</span>
-                    <span class="tag">API Gateway</span>
-                    <span class="tag">S3</span>
-                    <span class="tag">SNS</span>
-
-                    <a class="project-link"
-                       href="https://github.com/houda-saira"
-                       target="_blank" rel="noopener noreferrer">
-                        Explore GitHub →
-                    </a>
-                </article>
-
-                <article class="card">
-                    <h3>02. Secure Azure Landing Zone</h3>
-
-                    <p>
-                        A cloud architecture project focused on governance,
-                        identity and access management, network segmentation
-                        and secure infrastructure deployment.
-                    </p>
-
-                    <span class="tag">Azure</span>
-                    <span class="tag">Terraform</span>
-                    <span class="tag">Networking</span>
-
-                    <a class="project-link"
-                       href="https://github.com/houda-saira"
-                       target="_blank" rel="noopener noreferrer">
-                        Explore GitHub →
-                    </a>
-                </article>
-
-                <article class="card">
-                    <h3>03. Kubernetes Network Services</h3>
-
-                    <p>
-                        A hands-on lab exploring Kubernetes networking
-                        and Network Service Mesh for service connectivity
-                        and network function chaining.
-                    </p>
-
-                    <span class="tag">Kubernetes</span>
-                    <span class="tag">Minikube</span>
-                    <span class="tag">Network Service Mesh</span>
-
-                    <a class="project-link"
-                       href="https://github.com/houda-saira"
-                       target="_blank" rel="noopener noreferrer">
-                        Explore GitHub →
-                    </a>
-                </article>
-            </div>
-        </section>
-
-        <section id="certifications">
-            <h2>Certifications</h2>
-
-            <p class="section-intro">
-                Professional certifications and continuous learning.
-            </p>
-
-            <div class="grid">
-                <article class="card">
-                    <h3>AWS Certified Solutions Architect – Associate</h3>
-                    <p>
-                        Cloud architecture, resilient systems and
-                        AWS infrastructure design.
-                    </p>
-                </article>
-
-                <article class="card">
-                    <h3>AWS Certified Cloud Practitioner</h3>
-                    <p>
-                        Foundational knowledge of AWS cloud services,
-                        security and pricing.
-                    </p>
-                </article>
-
-                <article class="card">
-                    <h3>Continuous Learning</h3>
-                    <p>
-                        Cloud security, Azure administration,
-                        Infrastructure as Code and DevSecOps.
-                    </p>
-                </article>
-            </div>
-        </section>
-
-        <section id="contact">
-            <h2>Let's Connect</h2>
-
-            <div class="contact-box">
-                <p>
-                    Interested in cloud infrastructure, DevOps,
-                    automation or cybersecurity? Feel free to connect
-                    with me.
-                </p>
-
-                <div class="buttons">
-                    <a class="button primary"
-                       href="https://github.com/houda-saira"
-                       target="_blank" rel="noopener noreferrer">
-                        GitHub
-                    </a>
-
-                    <a class="button"
-                       href="https://www.linkedin.com/"
-                       target="_blank" rel="noopener noreferrer">
-                        LinkedIn
-                    </a>
-                </div>
-
-                <p>
-                    You can replace these links with your actual
-                    professional profiles.
-                </p>
-            </div>
-        </section>
-    </main>
-
-    <footer>
-        <p>© 2026 Houda Saira · Cloud & DevOps Portfolio</p>
-        <p>Designed with HTML and CSS.</p>
-    </footer>
-
-</body>
-</html>
+        .section-description {
+            color: var(--mut
